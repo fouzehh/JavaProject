@@ -1,0 +1,55 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.util.Scanner;
+
+public class BudgetTracker {
+   private double balance = 0.0;
+
+   public BudgetTracker() {
+   }
+
+   public void addIncome(double var1) {
+      this.balance += var1;
+   }
+
+   public void addExpense(double var1) {
+      this.balance -= var1;
+   }
+
+   public double getBalance() {
+      return this.balance;
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      BudgetTracker var2 = new BudgetTracker();
+
+      while(true) {
+         System.out.println("1. Add Income");
+         System.out.println("2. Add Expense");
+         System.out.println("3. View Balance");
+         System.out.println("4. Exit");
+         System.out.print("Enter your choice: ");
+         int var3 = var1.nextInt();
+         switch (var3) {
+            case 1:
+               System.out.print("Enter income amount: ");
+               double var4 = var1.nextDouble();
+               var2.addIncome(var4);
+               break;
+            case 2:
+               System.out.print("Enter expense amount: ");
+               double var6 = var1.nextDouble();
+               var2.addExpense(var6);
+               break;
+            case 3:
+               System.out.println("Current Balance: Rs" + var2.getBalance());
+               break;
+            case 4:
+               System.out.println("Exiting... Thank you!");
+               return;
+            default:
+               System.out.println("Invalid choice. Please try again.");
+         }
+      }
+   }
+}
